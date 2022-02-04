@@ -1,9 +1,7 @@
 # Autocomplete-API
-Aviation Edge Autocomplete API returns relevant airports and cities in the database based on the letters submitted. This allows users to pick the airport or city of their choice off the list after typing in the letters when the API is implemented. The airports the API returns include airports that have the submitted letters anywhere in them. For example, when the letters "ist" requested, the API returns both "**Ist**anbul Airport" and "Br**ist**ol Airport" (among other items).
+Aviation Edge [Autocomplete API](https://aviation-edge.com/airport-autocomplete/) returns relevant airports and cities in the database based on the letters submitted. This allows users to pick the airport or city of their choice off the list after typing in the letters when the API is implemented. The airports the API returns include airports that have the submitted letters anywhere in them. For example, when the letters "ist" requested, the API returns both "**Ist**anbul Airport" and "Br**ist**ol Airport" (among other items).
 
 The API is particularly useful for travel agency and flight booking websites, tools or apps to display the relevant airport and cities as a list for the user to choose from.
-
-[Get your API key](https://aviation-edge.com/premium-api/) in a minute and start testing the data right away. The API is provided through API subscriptions. All plans grant access to the Future Schedules API and other APIs with a difference of the monthly API call limit. Choose the best plan for you and upgrade, downgrade or cancel your plan anytime without  commitments.
 
 ### Documentation
 You may find input parameters, output examples with explanations for each item, filter list, and more in the [documentation](https://aviation-edge.com/developers/).
@@ -64,8 +62,10 @@ Airports with the letters containing "xyz" in them:
 ]
 ```
 
-### Questions & Support
+### Access & Support
 [Contact us](https://aviation-edge.com/contact/) via email for any questions or support requests.
+
+[Get your API key](https://aviation-edge.com/premium-api/) in a minute and start testing the data right away. The API is provided through API subscriptions. All plans grant access to the Future Schedules API and other APIs with a difference of the monthly API call limit. Choose the best plan for you and upgrade, downgrade or cancel your plan anytime without  commitments.
 
 ### License
 The use of the API is subject to Aviation Edge [Terms and Conditions](https://aviation-edge.com/api-terms-of-service/).
