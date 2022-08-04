@@ -13,7 +13,7 @@ You may find input parameters, output examples with explanations for each item, 
 ### Request 
 Airports with the letters containing "xyz" in them:
 
-**GET** `http://aviation-edge.com/v2/public/autocomplete?key=[API_KEY]&city=xyz`
+**GET** `https://aviation-edge.com/v2/public/autocomplete?key=[API_KEY]&city=xyz`
 
 ### Response
 ```
