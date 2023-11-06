@@ -11,61 +11,66 @@ You may find input parameters, output examples with explanations for each item, 
 - Any autocomplete feature related to cities or airports
 
 ### Request 
-Airports with the letters containing "xyz" in them:
 
-**GET** `https://aviation-edge.com/v2/public/autocomplete?key=[API_KEY]&city=xyz`
+**GET** `https://aviation-edge.com/v2/public/autocomplete?key=[API_KEY]&city=berlin`
 
 ### Response
+
 ```
-[
 {
-"code": "AMS",
-"name": "Amsterdam",
-"cityCode": "AMS",
-"cityName": "Amsterdam",
-"countryCode": "NL",
-"countryName": "Netherlands",
-"lat": 52.3730556, "lng": 4.8922222,
-"timezone": "Europe/Amsterdam",
-"type": "city" } ],
-"airports":
-[
-{
-"code": "ZYA",
-"name": "Amsterdam Centraal Railway Station",
-"cityCode": "AMS",
-"cityName": "Amsterdam",
-"countryCode": "NL",
-"countryName": "Netherlands",
-"lat": 52.3730556,
-"lng": 4.8922222,
-"timezone": "Europe/Amsterdam",
-"type": "rail_station",
-"isRailRoad": 1,
-"isBusStation": 0 },
-{
-"code": "AMS",
-"name": "Schiphol",
-"cityCode": "AMS",
-"cityName": "Amsterdam",
-"countryCode": "NL",
-"countryName": "Netherlands",
-"lat": 52.30907,
-"lng": 4.763385,
-"timezone": "Europe/Amsterdam",
-"type": "airport",
-"isRailRoad": 0,
-"isBusStation": 0 } ],
-"airportsByCities":
-},
-...
-]
+    "GMT": "1",
+    "codeIataAirport": "SXF",
+    "codeIataCity": "BER",
+    "codeIcaoAirport": "EDDB",
+    "codeIso2Country": "DE",
+    "latitudeAirport": 52.370277,
+    "longitudeAirport": 13.521388,
+    "nameAirport": "Berlin-Schoenefeld",
+    "nameCountry": "Germany",
+    "phone": "",
+    "timezone": "Europe/Berlin"
+}
+…
+```
+
+### Useful Example Codes
+1.	Fetching the data (axiom library used)
+
+```
+const axios = require('axios');
+
+const API_KEY = 'api-key'; // Replace with your actual API key
+const BASE_URL = 'https://aviation-edge.com/v2/public/autocomplete';
+
+async function getAirportsByCity(city) {
+    try {
+        const response = await axios.get(BASE_URL, {
+            params: {
+                key: API_KEY,
+                city: city
+            }
+        });
+
+        if (response.status === 200 && response.data) {
+            return response.data;
+        } else {
+            throw new Error(`Failed to retrieve data. Status code: ${response.status}`);
+        }
+    } catch (error) {
+        console.error(`Error fetching airports for city ${city}:`, error);
+    }
+}
+
+// Example usage:
+getAirportsByCity('berlin').then(data => {
+    console.log(data);
+});
 ```
 
 ### Access & Support
 [Contact us](https://aviation-edge.com/contact/) via email for any questions or support requests.
 
-[Get your API key](https://aviation-edge.com/premium-api/) in a minute and start testing the data right away. The API is provided through API subscriptions. All plans grant access to the Future Schedules API and other APIs with a difference of the monthly API call limit. Choose the best plan for you and upgrade, downgrade or cancel your plan anytime without  commitments.
+[Get your API key](https://aviation-edge.com/premium-api/) in a minute and start testing the data right away. The API is provided through API subscriptions. All plans grant access to the Future Schedules API and other APIs with a difference of the monthly API call limit. Choose the best plan for you and upgrade, downgrade or cancel your plan anytime without commitments.
 
 ### License
 The use of the API is subject to Aviation Edge [Terms and Conditions](https://aviation-edge.com/api-terms-of-service/).
